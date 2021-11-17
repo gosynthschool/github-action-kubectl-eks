@@ -1,0 +1,30 @@
+name: 'Kubectl 1.21.2'
+description: 'Kubectl 1.21.2 for EKS'
+branding:
+  icon: 'compass'
+  color: 'blue'
+inputs:
+  exec:
+    description: 'The full kubectl command to run (including kubectl)'
+    required: true
+  kubeconfig:
+    description: 'The full kubeconfig'
+    required: false
+  aws_access_key_id:
+    description: >-
+      AWS Access Key ID. This input is required if running in the GitHub hosted environment.
+      It is optional if running in a self-hosted environment that already has AWS credentials,
+      for example on an EC2 instance.
+    required: false
+  aws_secret_access_key:
+    description: >-
+      AWS Secret Access Key. This input is required if running in the GitHub hosted environment.
+      It is optional if running in a self-hosted environment that already has AWS credentials,
+      for example on an EC2 instance.
+    required: false
+  aws_region:
+    description: 'AWS Region, e.g. us-east-2'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
