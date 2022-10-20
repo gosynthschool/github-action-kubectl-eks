@@ -1,4 +1,4 @@
-FROM alpine/k8s:1.21.2 AS runtime
+FROM alpine/k8s:1.22.15 AS runtime
 
 # hadolint ignore=DL3002
 USER root
